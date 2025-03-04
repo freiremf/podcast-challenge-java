@@ -1,25 +1,26 @@
 package br.com.challenge.modelo;
 
-public class Musica extends Audio implements Classificavel {
-    private String artista;
+public class Song extends Audio {
+    private String artist;
     private String album;
-    private String genero;
+    private String genre;
 
-    public Musica(String titulo, double duracao) {
-        super(titulo, duracao);
+    public Song(String title, double amountTime) {
+        super(title, amountTime);
     }
 
     @Override
-    public void classificar(int nota) {
-        this.classificar(nota);
+    public int getRate() {
+        if(this.getTotalStreamings() > 200) return 10;
+        return 8;
     }
 
-    public String getArtista() {
-        return artista;
+    public String getArtist() {
+        return artist;
     }
 
-    public void setArtista(String artista) {
-        this.artista = artista;
+    public void setArtist(String artist) {
+        this.artist = artist;
     }
 
     public String getAlbum() {
@@ -30,11 +31,11 @@ public class Musica extends Audio implements Classificavel {
         this.album = album;
     }
 
-    public String getGenero() {
-        return genero;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setGenero(String genero) {
-        this.genero = genero;
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 }

@@ -1,31 +1,41 @@
-package br.com.challenge;
+package br.com.challenge.modelo;
 
-public class Podcast extends Audio implements Classificavel{
-    private String apresentador;
-    private String convidado;
+public class Podcast extends Audio {
+    private String host;
+    private String invited;
+    private String description;
 
-    public Podcast (String titulo, double duracao) {
-        super(titulo, duracao);
+    public Podcast (String title, double amountTime) {
+        super(title, amountTime);
     }
 
     @Override
-    public void classificar(int nota) {
-
+    public int getRate() {
+        if(this.getTotalLikes() > 500) return 10;
+        return 5;
     }
 
-    public String getApresentador() {
-        return apresentador;
+    public String getHost() {
+        return host;
     }
 
-    public void setApresentador(String apresentador) {
-        this.apresentador = apresentador;
+    public void setHost(String host) {
+        this.host = host;
     }
 
-    public String getConvidado() {
-        return convidado;
+    public String getInvited() {
+        return invited;
     }
 
-    public void setConvidado(String convidado) {
-        this.convidado = convidado;
+    public void setInvited(String invited) {
+        this.invited = invited;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

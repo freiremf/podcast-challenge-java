@@ -1,57 +1,45 @@
-package br.com.challenge;
+package br.com.challenge.modelo;
 
 public class Audio {
-    private String titulo;
-    private double duracao;
-    private int totalReproducoes;
-    private int curtidas;
-    private int classificacao;
+    private final String title;
+    private final double amountTime;
+    private int totalStreamings;
+    private int totalLikes;
+    private final int rate;
 
-    public Audio(String titulo, double duracao) {
-        this.titulo = titulo;
-        this.duracao = duracao;
-        this.totalReproducoes = 0;
-        this.curtidas = 0;
-        this.classificacao = 0;
+    public Audio(String title, double amountTime) {
+        this.title = title;
+        this.amountTime = amountTime;
+        this.totalStreamings = 0;
+        this.totalLikes = 0;
+        this.rate = 0;
     }
 
-    public void curtir() {
-        this.curtidas++;
+    public void like() {
+        this.totalLikes++;
     }
 
-    public void reproduzir() {
-        this.totalReproducoes++;
+    public void play() {
+        this.totalStreamings++;
     }
 
-    public String getTitulo() {
-        return titulo;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public double getAmountTime() {
+        return amountTime;
     }
 
-    public double getDuracao() {
-        return duracao;
+    public int getTotalStreamings() {
+        return totalStreamings;
     }
 
-    public void setDuracao(double duracao) {
-        this.duracao = duracao;
+    public int getTotalLikes() {
+        return totalLikes;
     }
 
-    public int getTotalReproducoes() {
-        return totalReproducoes;
-    }
-
-    public void setTotalReproducoes(int totalReproducoes) {
-        this.totalReproducoes = totalReproducoes;
-    }
-
-    public int getCurtidas() {
-        return curtidas;
-    }
-
-    public void setCurtidas(int curtidas) {
-        this.curtidas = curtidas;
+    public int getRate() {
+        return this.rate;
     }
 }
